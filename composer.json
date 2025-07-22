@@ -1,0 +1,21 @@
+{
+  "name": "mgx/router",
+  "description": "Modern, esnek ve PSR-4 uyumlu PHP router/middleware sistemi",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mustafa ŞENTÜRK",
+      "email": "Mustafa@microgrup.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Mgx\\Router\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=8.1"
+  },
+  "keywords": ["router", "middleware", "php", "psr-4", "mgx"]
+}
