@@ -1,14 +1,5 @@
-# MGX Router — Detaylı Dokümantasyon
-
-Bu dokümantasyon, [routerOrnek.php](routerOrnek.php) dosyasındaki örnekler üzerinden MGX Router'ın tüm özelliklerini kapsamlı şekilde açıklar.EAD
-# MGX Router — Detaylı Dokümantasyon
-
-Bu dokümantasyon, [routerOrnek.php](routerOrnek.php) dosyasındaki örnekler üzerinden MGX Router’ın tüm özelliklerini kapsamlı şekilde açıklar.
 =======
 # mgx-router
-Mgx router System V1.0 - İlk versiyon - Mustafa ŞENTÜRK
-
->>>>>>> 54561bf925d48b58dd291d5db3d57ee36cf1e4f7
 
 ---
 
@@ -270,13 +261,6 @@ $router->dispatch();
 
 ---
 
-<<<<<<< HEAD
-## Tam Örnek
-
-Tüm özellikleri bir arada gösteren tam örnek için [routerOrnek.php](routerOrnek.php) dosyasını inceleyin.
-
-=======
->>>>>>> 54561bf925d48b58dd291d5db3d57ee36cf1e4f7
 ---
 
 ## Lisans
@@ -285,8 +269,4 @@ MIT
 
 ---
 
-<<<<<<< HEAD
 Her türlü katkı ve öneri için iletişime geçebilirsiniz.
-=======
-Her türlü katkı ve öneri için iletişime geçebilirsiniz.
->>>>>>> 54561bf925d48b58dd291d5db3d57ee36cf1e4f7
