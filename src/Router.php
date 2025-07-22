@@ -3,7 +3,7 @@
 namespace Mgx\Router;
 
 use Closure;
-use Mgx\Router\Route3;
+use Mgx\Router\Route;
 use Mgx\Router\ControllerResolver;
 use Mgx\Router\MiddlewareInterface;
 use Mgx\Router\Request;
@@ -16,27 +16,27 @@ class Router
     protected array $groupStack = [];
     protected ?Closure $fallbackHandler = null;
 
-    public function get(string $uri, string|array|Closure $handler): Route3
+    public function get(string $uri, string|array|Closure $handler): Route
     {
         return $this->add('GET', $uri, $handler);
     }
 
-    public function post(string $uri, string|array|Closure $handler): Route3
+    public function post(string $uri, string|array|Closure $handler): Route
     {
         return $this->add('POST', $uri, $handler);
     }
 
-    public function put(string $uri, string|array|Closure $handler): Route3
+    public function put(string $uri, string|array|Closure $handler): Route
     {
         return $this->add('PUT', $uri, $handler);
     }
 
-    public function delete(string $uri, string|array|Closure $handler): Route3
+    public function delete(string $uri, string|array|Closure $handler): Route
     {
         return $this->add('DELETE', $uri, $handler);
     }
 
-    public function patch(string $uri, string|array|Closure $handler): Route3
+    public function patch(string $uri, string|array|Closure $handler): Route
     {
         return $this->add('PATCH', $uri, $handler);
     }
@@ -58,7 +58,7 @@ class Router
         $this->fallbackHandler = $callback;
     }
 
-    protected function add(string $method, string $uri, string|array|Closure $handler): Route3
+    protected function add(string $method, string $uri, string|array|Closure $handler): Route
     {
         $prefix = $namespace = '';
         $middlewares = [];
@@ -82,7 +82,7 @@ class Router
             $handler = $namespace . $handler;
         }
 
-        $route = new Route3($method, $uri, $handler, $middlewares);
+        $route = new Route($method, $uri, $handler, $middlewares);
         $this->routes[] = $route;
 
         // Named route desteği

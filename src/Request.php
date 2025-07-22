@@ -90,7 +90,7 @@ class Request
         // JSON body mi?
         $contentType = $this->header('content-type');
 
-        if (str_contains($contentType, 'application/json')) {
+        if (($contentType ?? '') && str_contains($contentType, 'application/json')) {
             $input = file_get_contents('php://input');
             return json_decode($input, true) ?? [];
         }
