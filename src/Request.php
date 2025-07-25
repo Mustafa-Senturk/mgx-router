@@ -112,12 +112,12 @@ class Request
         return $this->uri;
     }
 
-    public function query(string $key = null, $default = null): mixed
+    public function query(?string $key = null, $default = null): mixed
     {
         return $key ? ($this->query[$key] ?? $default) : $this->query;
     }
 
-    public function input(string $key = null, $default = null): mixed
+    public function input(?string $key = null, $default = null): mixed
     {
         return $key ? ($this->body[$key] ?? $default) : $this->body;
     }
