@@ -78,16 +78,12 @@ class Request
         return $headers;
     }
 
-    /**
+     /**
      * Body verisini (form veya JSON) parse eder.
      */
     protected function parseBody(): array
     {
-        if ($this->method === 'POST') {
-            return $_POST ?? [];
-        }
-
-        // JSON body mi?
+        // JSON body mi kontrol et
         $contentType = $this->header('content-type');
 
         if (($contentType ?? '') && str_contains($contentType, 'application/json')) {
@@ -95,9 +91,13 @@ class Request
             return json_decode($input, true) ?? [];
         }
 
+        // Form data için POST kontrolü
+        if ($this->method === 'POST') {
+            return $_POST ?? [];
+        }
+
         return [];
     }
-
     // -------------------------------
     // Erişim metodları
     // -------------------------------
