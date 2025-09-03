@@ -83,19 +83,24 @@ class Request
      */
     protected function parseBody(): array
     {
-        // JSON body mi kontrol et
         $contentType = $this->header('content-type');
-
+    
+        // JSON body kontrolü
         if (($contentType ?? '') && str_contains($contentType, 'application/json')) {
             $input = file_get_contents('php://input');
             return json_decode($input, true) ?? [];
         }
-
-        // Form data için POST kontrolü
+    
+        // multipart/form-data (FormData gönderildiğinde buraya düşer)
+        if (($contentType ?? '') && str_contains($contentType, 'multipart/form-data')) {
+            return $_POST ?? []; // dosyalar için $_FILES de kullanılabilir
+        }
+    
+        // x-www-form-urlencoded (klasik form submit)
         if ($this->method === 'POST') {
             return $_POST ?? [];
         }
-
+    
         return [];
     }
     // -------------------------------
